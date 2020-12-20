@@ -1,0 +1,26 @@
+
+body{background:blue;
+color:red;}
+a{color:yellow;
+  text-decoration:none;}
+a:hover{
+		color:black;
+		background:white;
+}
+
+h1:hover{
+		color:black;
+		background:white;
+}
+
+
+
+	h1{font-family:serif;
+	   font-size:20pt;
+	}
+  
+
+ h2{font-family:monospace;
+	   font-size:20pt;
+	}
+	.indent{margin-left:20px}

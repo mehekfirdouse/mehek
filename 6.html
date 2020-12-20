@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<body>
+
+
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme"><img src="logo.png"class="rounded"   style="width:80px;">The BAnk </h1>
+ 
+  <a href="prac1.html" class="w3-bar-item w3-button">Home</a>
+  <a href="new3.html" class="w3-bar-item w3-button">About us</a>
+  <a href="prac1.html" class="w3-bar-item w3-button">Back</a>
+  
+   <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+</nav>
+
+
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h1 class="w3-xxxlarge w3-animate-bottom">Customer Balance</h1>
+   </header>
+
+<body>
+
+<div class="w3-container">
+
+
+  <table class="w3-table-all">
+    <thead>
+      <tr class="w3-light-grey w3-hover-red">
+        <th> Name</th>
+        <th>Email-id </th>
+        <th>Acc.balance</th>
+        <th>Acc.No </th>
+      </tr>
+    </thead>
+    
+        <tr class="w3-hover-blue">
+        <td>Misbah A</td>
+        <td>misbah@gmail.com</td>
+        <td>51000</td>
+		<td>5789 XXXX XXXX</td>
+      </tr>
+      <tr>
+        <td>Anjum M</td>
+        <td>anjum@gmail.com</td>
+        <td>32000</td>
+		<td>8754 XXXX XXXX</td>
+      </tr>
+      <tr>
+        <td>Sadaf H</td>
+        <td>sadaf@gmail.com</td>
+        <td>65000</td>
+		<td>3356 XXXX XXXX</td>
+      </tr>
+	  <tr>
+        <td>Asiya K</td>
+        <td>asiya@gmail.com</td>
+        <td>85000</td>
+		<td>3896 XXXX XXXX</td>
+      </tr><tr>
+        <td>Muskan</td>
+        <td>muskan@gmail.com</td>
+        <td>90000</td>
+		<td>9865 XXXX XXXX</td>
+      </tr><tr>
+        <td>Ansha M</td>
+        <td>ansha@gmail.com</td>
+        <td>10000</td>
+		<td>2679 XXXX XXXX</td>
+      </tr><tr>
+        <td>Jasmine B</td>
+        <td>jas@gmail.com</td>
+        <td>160000</td>
+		<td>3789 XXXX XXXX</td>
+      </tr><tr>
+        <td>Pakhi V</td>
+        <td>pakhi@gmail.com</td>
+        <td>4800</td>
+		<td>6754 XXXX XXXX</td>
+      </tr><tr>
+        <td>Naira G</td>
+        <td>naira@gmail.com</td>
+        <td>19000</td>
+		<td>5678 XXXX XXXX</td>
+      </tr><tr>
+        <td>Rubina D</td>
+        <td>rubina@gmail.com</td>
+        <td>75000</td>
+		<td>1425 XXXX XXXX</td>
+      </tr>
+
+  </table>
+</div>
+
+</body>
+
+
+
+
+<script>
+
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+
+var slideIndex = 1;
+
+function plusDivs(n) {
+  slideIndex = slideIndex + n;
+  showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+  
+</body>
+</html>
